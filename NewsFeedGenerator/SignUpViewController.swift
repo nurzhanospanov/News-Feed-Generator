@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import Bolts
+import ParseFacebookUtilsV4
+import FBSDKCoreKit
 
 
 class SignUpViewController: UIViewController {
@@ -76,7 +78,34 @@ class SignUpViewController: UIViewController {
         self.presentViewController(vc, animated: true, completion: nil)
     }
 
-    /*
+    @IBAction func fbLoginButtonPressed(sender: AnyObject) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(["email", "public_profile"]) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if let user = user {
+                if user.isNew {
+                    let vc:ViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    
+                } else {
+                    let loginAlert = UIAlertController(title: "Succesful!", message: "You are signing up through Facebook!", preferredStyle: UIAlertControllerStyle.Alert)
+                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {(action:UIAlertAction!) in self.goToResource()})
+                    loginAlert.addAction(okAction)
+                    self.presentViewController(loginAlert, animated: true, completion: nil)                }
+            } else {
+                let loginAlert = UIAlertController(title: "Error!", message: "Uh oh. The user cancelled the Facebook login.", preferredStyle: UIAlertControllerStyle.Alert)
+                self.presentViewController(loginAlert, animated: true, completion: nil)
+
+                
+            }
+        }
+        
+
+    }
+    public func goToResource(){
+        let vc:ChooseResourceViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChooseResourceViewController") as! ChooseResourceViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

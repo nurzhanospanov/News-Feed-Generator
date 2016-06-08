@@ -92,16 +92,6 @@
                                     <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="son-Ot-uFf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUS-zv-ZVP">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Войти через Facebook">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="50" y="520" width="300" height="46"/>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ2-yr-EPq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -113,6 +103,19 @@
                                 </variation>
                                 <connections>
                                     <action selector="resetPasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VUL-hs-oQT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUS-zv-ZVP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Войти через Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="50" y="520" width="300" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="fbLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MR1-yk-N6G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,8 +130,8 @@
                                 <exclude reference="YqI-M2-jFl"/>
                                 <exclude reference="cRL-lw-3PC"/>
                                 <exclude reference="AE0-2q-PIg"/>
-                                <exclude reference="VUS-zv-ZVP"/>
                                 <exclude reference="dJ2-yr-EPq"/>
+                                <exclude reference="VUS-zv-ZVP"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -141,13 +144,14 @@
                                 <include reference="YqI-M2-jFl"/>
                                 <include reference="cRL-lw-3PC"/>
                                 <include reference="AE0-2q-PIg"/>
-                                <include reference="VUS-zv-ZVP"/>
                                 <include reference="dJ2-yr-EPq"/>
+                                <include reference="VUS-zv-ZVP"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="YqI-M2-jFl" id="jDw-S6-fMR"/>
+                        <outlet property="facebookLoginButton" destination="VUS-zv-ZVP" id="gN3-6Y-Zvw"/>
                         <outlet property="passwordTextField" destination="cRL-lw-3PC" id="6Zz-ao-97o"/>
                     </connections>
                 </viewController>
@@ -230,6 +234,23 @@
             </objects>
             <point key="canvasLocation" x="375" y="1040"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Ogs-nH-aE6">
+            <objects>
+                <viewController id="aW8-Hg-2C7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ja4-5W-S69"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qbw-0l-E0Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K7m-oS-4cI">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NgC-MW-uVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="1040"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="xCJ-AG-dyq">
             <objects>
@@ -308,6 +329,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="515" width="300" height="46"/>
                                 </variation>
+                                <connections>
+                                    <action selector="fbLoginButtonPressed:" destination="ZKH-k8-moc" eventType="touchUpInside" id="rpd-FB-aVM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03Z-IP-Amj">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
