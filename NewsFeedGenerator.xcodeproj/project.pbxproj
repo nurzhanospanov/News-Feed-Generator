@@ -33,6 +33,12 @@
 		74AA9F2B1D07E51400D92115 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AA9F281D07E51400D92115 /* FBSDKShareKit.framework */; };
 		74AA9F321D080B8A00D92115 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AA9F311D080B8A00D92115 /* ParseFacebookUtils.framework */; };
 		74AA9F341D080D3B00D92115 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AA9F331D080D3B00D92115 /* ParseFacebookUtilsV4.framework */; };
+		74AA9F3C1D09427C00D92115 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3B1D09427C00D92115 /* FeedTableViewController.swift */; };
+		74AA9F3E1D0942CE00D92115 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3D1D0942CE00D92115 /* FavoritesTableViewController.swift */; };
+		74AA9F401D0942E700D92115 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */; };
+		74AA9F421D09479100D92115 /* TrendingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F411D09479100D92115 /* TrendingTableViewController.swift */; };
+		74AA9F441D095B4F00D92115 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F431D095B4F00D92115 /* Container.swift */; };
+		74AA9F461D095E3F00D92115 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F451D095E3F00D92115 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,12 @@
 		74AA9F2D1D07ECA400D92115 /* NewsFeedGenerator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsFeedGenerator-Bridging-Header.h"; sourceTree = "<group>"; };
 		74AA9F311D080B8A00D92115 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		74AA9F331D080D3B00D92115 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		74AA9F3B1D09427C00D92115 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		74AA9F3D1D0942CE00D92115 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		74AA9F411D09479100D92115 /* TrendingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewController.swift; sourceTree = "<group>"; };
+		74AA9F431D095B4F00D92115 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		74AA9F451D095E3F00D92115 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,7 @@
 			children = (
 				74AA9EF21D06ACA900D92115 /* NewsFeedGenerator */,
 				74AA9EF11D06ACA900D92115 /* Products */,
+				74AA9F2C1D07E63500D92115 /* FacebookSDK */,
 				74AA9F0F1D06C13600D92115 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -115,15 +128,14 @@
 		74AA9EF21D06ACA900D92115 /* NewsFeedGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				74AA9F2C1D07E63500D92115 /* FacebookSDK */,
 				74AA9EF31D06ACA900D92115 /* AppDelegate.swift */,
-				74AA9EF51D06ACA900D92115 /* ViewController.swift */,
-				74AA9F051D06B13200D92115 /* SignInViewController.swift */,
 				74AA9EF71D06ACA900D92115 /* Main.storyboard */,
-				74AA9F071D06B3A700D92115 /* SignUpViewController.swift */,
-				74AA9F241D06CE0E00D92115 /* ResetPasswordViewController.swift */,
-				74AA9F091D06BB7700D92115 /* ChooseResourceViewController.swift */,
 				74AA9EFA1D06ACA900D92115 /* Assets.xcassets */,
+				74AA9F381D0941CA00D92115 /* Tab bar View Controllers */,
+				74AA9F371D09412D00D92115 /* Registration */,
+				74AA9EF51D06ACA900D92115 /* ViewController.swift */,
+				74AA9F091D06BB7700D92115 /* ChooseResourceViewController.swift */,
+				74AA9F431D095B4F00D92115 /* Container.swift */,
 				74AA9EFC1D06ACA900D92115 /* LaunchScreen.storyboard */,
 				74AA9EFF1D06ACA900D92115 /* Info.plist */,
 				74AA9F2D1D07ECA400D92115 /* NewsFeedGenerator-Bridging-Header.h */,
@@ -160,6 +172,29 @@
 				74AA9F281D07E51400D92115 /* FBSDKShareKit.framework */,
 			);
 			name = FacebookSDK;
+			path = NewsFeedGenerator;
+			sourceTree = "<group>";
+		};
+		74AA9F371D09412D00D92115 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				74AA9F051D06B13200D92115 /* SignInViewController.swift */,
+				74AA9F071D06B3A700D92115 /* SignUpViewController.swift */,
+				74AA9F241D06CE0E00D92115 /* ResetPasswordViewController.swift */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
+		74AA9F381D0941CA00D92115 /* Tab bar View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				74AA9F3B1D09427C00D92115 /* FeedTableViewController.swift */,
+				74AA9F451D095E3F00D92115 /* TabBarViewController.swift */,
+				74AA9F3D1D0942CE00D92115 /* FavoritesTableViewController.swift */,
+				74AA9F411D09479100D92115 /* TrendingTableViewController.swift */,
+				74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */,
+			);
+			name = "Tab bar View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +268,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AA9F421D09479100D92115 /* TrendingTableViewController.swift in Sources */,
 				74AA9EF61D06ACA900D92115 /* ViewController.swift in Sources */,
 				74AA9EF41D06ACA900D92115 /* AppDelegate.swift in Sources */,
 				74AA9F0A1D06BB7700D92115 /* ChooseResourceViewController.swift in Sources */,
+				74AA9F461D095E3F00D92115 /* TabBarViewController.swift in Sources */,
+				74AA9F3E1D0942CE00D92115 /* FavoritesTableViewController.swift in Sources */,
+				74AA9F3C1D09427C00D92115 /* FeedTableViewController.swift in Sources */,
 				74AA9F251D06CE0E00D92115 /* ResetPasswordViewController.swift in Sources */,
+				74AA9F401D0942E700D92115 /* ProfileViewController.swift in Sources */,
 				74AA9F081D06B3A700D92115 /* SignUpViewController.swift in Sources */,
+				74AA9F441D095B4F00D92115 /* Container.swift in Sources */,
 				74AA9F061D06B13200D92115 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

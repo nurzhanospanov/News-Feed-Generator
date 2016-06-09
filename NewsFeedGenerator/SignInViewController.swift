@@ -21,12 +21,19 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var currentUser = PFUser.currentUser();
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let currentUser = PFUser.currentUser()
+        print(currentUser)
         if(currentUser != nil){
+            print("i am here")
             let vc:ChooseResourceViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChooseResourceViewController") as! ChooseResourceViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
