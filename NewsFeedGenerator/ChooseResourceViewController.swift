@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import Parse
 
-class ChooseResourceViewController: UIViewController {
+class ChooseResourceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    var resources = [PFObject]()
 
-    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        gettingFacebookID()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.loadResourcesFromParse()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,58 +30,61 @@ class ChooseResourceViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func gettingFacebookID()
-    {
-        let request = FBSDKGraphRequest(graphPath:"me", parameters:nil)
-        // Send request to Facebook
-        request.startWithCompletionHandler {
-            (connection, result, error) in
-            if error != nil {
-                // Some error checking here
-                print(error)
-            }
-            else if let userData = result as? [String:AnyObject] {
-                // Access user data
-                Container.sharedInstance.facebookId = (userData["id"] as? String!)!
-                print("Lol")
-                print(Container.sharedInstance.facebookId)
-               
-                let pictureURL = "https://graph.facebook.com/\(Container.sharedInstance.facebookId)/picture?type=large&return_ssl_resources=1"
-                let URLRequest = NSURL(string: pictureURL)
-                let URLRequestNeeded = NSURLRequest(URL: URLRequest!)
-                NSURLConnection.sendAsynchronousRequest(URLRequestNeeded, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?, error: NSError?) -> Void in
-                    
-                    if error == nil {
-                       let picture = UIImage(data: data!)
-                        print(picture)
-                        Container.sharedInstance.picture = picture
-                        print(Container.sharedInstance.picture)
-                        self.imageView.image = picture
-                        
-                    }
-                    else {
-                        print("Error: \(error!.localizedDescription)")
-                    }
-                })
-
-                }
-            }
-        }
     
-    @IBAction func goToProfile(sender: AnyObject) {
+    @IBAction func btn(sender: AnyObject) {
         let vc:TabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarViewController") as! TabBarViewController
         self.presentViewController(vc, animated: true, completion: nil)
-
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadResourcesFromParse() {
+        
+        let query = PFQuery(className:"Resource")
+        
+        query.findObjectsInBackgroundWithBlock { (resourcesFromParse, error) in
+            print(resourcesFromParse)
+            if (error == nil) {
+                if (resourcesFromParse != nil) {
+                    self.resources = resourcesFromParse!
+                    self.tableView.reloadData()
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        
     }
-    */
-
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.resources.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!;
+        
+        let resource = resources[indexPath.row]
+        cell.textLabel!.text = resource["name"] as? String
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var userResource = PFObject(className: "UserResource")
+        userResource["user"] = PFUser.currentUser()
+        userResource["resource"] = resources[indexPath.row]
+        
+        userResource.saveInBackgroundWithBlock { (success, error) in
+            if (success) {
+                print("ok")
+            } else {
+                print("error")
+            }
+        }
+    }
+    
 }

@@ -234,23 +234,6 @@
             </objects>
             <point key="canvasLocation" x="375" y="1040"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ogs-nH-aE6">
-            <objects>
-                <viewController id="aW8-Hg-2C7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ja4-5W-S69"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qbw-0l-E0Y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="K7m-oS-4cI">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NgC-MW-uVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1032" y="1040"/>
-        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="xCJ-AG-dyq">
             <objects>
@@ -423,15 +406,6 @@
                     <view key="view" contentMode="scaleToFill" id="74P-XZ-UzE">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите ресурс, который будете читать" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-C1-ZQB">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="58" width="334" height="21"/>
-                                </variation>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Поиск" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVY-Sf-Lh1">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="textColor" red="0.50588235294117645" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
@@ -441,48 +415,55 @@
                                     <rect key="frame" x="84" y="20" width="232" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-sy-fgr">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="120" width="46" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="goToProfile:" destination="RFB-U0-lyD" eventType="touchUpInside" id="Jku-27-11u"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tm2-cV-6Ng">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LIs-qC-Kyp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="115" id="b49-x6-Fse">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b49-x6-Fse" id="KIY-RS-9PC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="76" y="187" width="240" height="128"/>
+                                    <rect key="frame" x="24" y="97" width="353" height="474"/>
                                 </variation>
-                            </imageView>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите минимум 4 ресурса, которые будете читать" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMQ-C1-ZQB">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="58" width="369" height="34"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="zMQ-C1-ZQB"/>
                                 <exclude reference="fVY-Sf-Lh1"/>
-                                <exclude reference="ORI-sy-fgr"/>
-                                <exclude reference="tm2-cV-6Ng"/>
+                                <exclude reference="LIs-qC-Kyp"/>
+                                <exclude reference="zMQ-C1-ZQB"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="zMQ-C1-ZQB"/>
                                 <include reference="fVY-Sf-Lh1"/>
-                                <include reference="ORI-sy-fgr"/>
-                                <include reference="tm2-cV-6Ng"/>
+                                <include reference="LIs-qC-Kyp"/>
+                                <include reference="zMQ-C1-ZQB"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="tm2-cV-6Ng" id="DPP-3k-dUo"/>
+                        <outlet property="tableView" destination="LIs-qC-Kyp" id="q1y-cy-u7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQD-od-glE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="349"/>
+            <point key="canvasLocation" x="1698" y="349"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YsV-pw-czL">
@@ -562,7 +543,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjG-6J-xnZ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="117" width="240" height="183"/>
+                                    <rect key="frame" x="80" y="199" width="240" height="183"/>
                                 </variation>
                             </imageView>
                         </subviews>

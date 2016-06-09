@@ -37,7 +37,6 @@
 		74AA9F3E1D0942CE00D92115 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3D1D0942CE00D92115 /* FavoritesTableViewController.swift */; };
 		74AA9F401D0942E700D92115 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */; };
 		74AA9F421D09479100D92115 /* TrendingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F411D09479100D92115 /* TrendingTableViewController.swift */; };
-		74AA9F441D095B4F00D92115 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F431D095B4F00D92115 /* Container.swift */; };
 		74AA9F461D095E3F00D92115 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F451D095E3F00D92115 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		74AA9F3D1D0942CE00D92115 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		74AA9F411D09479100D92115 /* TrendingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewController.swift; sourceTree = "<group>"; };
-		74AA9F431D095B4F00D92115 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		74AA9F451D095E3F00D92115 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +133,6 @@
 				74AA9F371D09412D00D92115 /* Registration */,
 				74AA9EF51D06ACA900D92115 /* ViewController.swift */,
 				74AA9F091D06BB7700D92115 /* ChooseResourceViewController.swift */,
-				74AA9F431D095B4F00D92115 /* Container.swift */,
 				74AA9EFC1D06ACA900D92115 /* LaunchScreen.storyboard */,
 				74AA9EFF1D06ACA900D92115 /* Info.plist */,
 				74AA9F2D1D07ECA400D92115 /* NewsFeedGenerator-Bridging-Header.h */,
@@ -278,7 +275,6 @@
 				74AA9F251D06CE0E00D92115 /* ResetPasswordViewController.swift in Sources */,
 				74AA9F401D0942E700D92115 /* ProfileViewController.swift in Sources */,
 				74AA9F081D06B3A700D92115 /* SignUpViewController.swift in Sources */,
-				74AA9F441D095B4F00D92115 /* Container.swift in Sources */,
 				74AA9F061D06B13200D92115 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
