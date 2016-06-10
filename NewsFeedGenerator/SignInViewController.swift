@@ -59,6 +59,9 @@ class SignInViewController: UIViewController {
                 }
             } else {
                 let loginAlert = UIAlertController(title: "Error!", message: "Uh oh. The user cancelled the Facebook login.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+                loginAlert.addAction(okAction)
+
                 self.presentViewController(loginAlert, animated: true, completion: nil)
                 
                 

@@ -38,6 +38,7 @@
 		74AA9F401D0942E700D92115 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */; };
 		74AA9F421D09479100D92115 /* TrendingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F411D09479100D92115 /* TrendingTableViewController.swift */; };
 		74AA9F461D095E3F00D92115 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F451D095E3F00D92115 /* TabBarViewController.swift */; };
+		74AA9F481D098A4800D92115 /* ChooseResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AA9F471D098A4800D92115 /* ChooseResourceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		74AA9F3F1D0942E700D92115 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		74AA9F411D09479100D92115 /* TrendingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingTableViewController.swift; sourceTree = "<group>"; };
 		74AA9F451D095E3F00D92115 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		74AA9F471D098A4800D92115 /* ChooseResourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseResourceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				74AA9F381D0941CA00D92115 /* Tab bar View Controllers */,
 				74AA9F371D09412D00D92115 /* Registration */,
 				74AA9EF51D06ACA900D92115 /* ViewController.swift */,
+				74AA9F471D098A4800D92115 /* ChooseResourceTableViewCell.swift */,
 				74AA9F091D06BB7700D92115 /* ChooseResourceViewController.swift */,
 				74AA9EFC1D06ACA900D92115 /* LaunchScreen.storyboard */,
 				74AA9EFF1D06ACA900D92115 /* Info.plist */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AA9F481D098A4800D92115 /* ChooseResourceTableViewCell.swift in Sources */,
 				74AA9F421D09479100D92115 /* TrendingTableViewController.swift in Sources */,
 				74AA9EF61D06ACA900D92115 /* ViewController.swift in Sources */,
 				74AA9EF41D06ACA900D92115 /* AppDelegate.swift in Sources */,

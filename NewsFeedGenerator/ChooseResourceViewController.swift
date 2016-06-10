@@ -31,11 +31,6 @@ class ChooseResourceViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btn(sender: AnyObject) {
-        let vc:TabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarViewController") as! TabBarViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-    }
     func loadResourcesFromParse() {
         
         let query = PFQuery(className:"Resource")
@@ -64,11 +59,18 @@ class ChooseResourceViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!;
-        
+        let cell: ChooseResourceTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChooseResourceTableViewCell") as! ChooseResourceTableViewCell
+
         let resource = resources[indexPath.row]
-        cell.textLabel!.text = resource["name"] as? String
+        let imageFile = resource["logo"] as? PFFile
         
+        imageFile!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+            guard let data = imageData, image = UIImage(data: data) else {return}
+                cell.imageView!.image = image
+            })
+        
+        //cell.textLabel!.text = resource["name"] as? String
+
         return cell
     }
     
